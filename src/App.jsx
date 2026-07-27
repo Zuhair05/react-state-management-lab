@@ -69,7 +69,10 @@ const App = () => {
         <div>
           <h3>Item Name :{availableItem.name}</h3>
           <p>Price: ${availableItem.price}</p>
-          <button onClick={availableBalance >= availableItem.price ?  () => handleAddToCart(availableItem) :() => setMsg("your balance not enough") }>Add to Cart</button>
+          <button onClick={availableBalance >= availableItem.price ?  () => handleAddToCart(availableItem) 
+            :() => {setMsg("your balance not enough")
+              setTimeout(()=> setMsg("") , 4000)
+            }  }>Add to Cart</button>
         </div>
       ))} <br />
 
